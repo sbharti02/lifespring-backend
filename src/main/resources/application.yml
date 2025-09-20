@@ -1,0 +1,48 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: lifespring-backend
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/lifespringdb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 44831299549-fdgdeceqt4s4h1k9g4kcclol0ajcv46q.apps.googleusercontent.com
+            client-secret:  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
+            scope:
+              - email
+              - profile
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sbhartigrd575@gmail.com
+    password: jnzy bsza vxxm bawp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+server:
+  port: 8080
+
+jwt:
+    secret : 2a83d584c9054c90b03c0f0a87e08520a1395fd651814d418d4144f1eb046173
+    refreshExpirationMs:  86400000 # 1 day
